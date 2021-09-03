@@ -28,7 +28,7 @@ def objc_importer(
         name + ".public_hmap",
     ]
 
-    objc_library(
+    native.objc_library(
         name = name,
         deps = deps,
         hdrs = hdrs,
