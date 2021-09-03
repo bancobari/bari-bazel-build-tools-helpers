@@ -1,4 +1,5 @@
 load("@build_bazel_rules_ios//rules:hmap.bzl", "headermap")
+load("@rules_cc//cc:defs.bzl", "objc_library")
 
 def objc_importer(
         name,
