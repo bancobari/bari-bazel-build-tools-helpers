@@ -7,12 +7,14 @@ def objc_importer(
         hdrs = [],
         copts = [],
         module_name = None,
+        visibility = ["//visibility:private"],
         **kwargs):
     headermap(
         name = name + ".public_hmap",
         namespace = module_name or name,
         hdrs = hdrs,
         direct_hdr_providers = deps,
+        visibility = visibility
     )
 
     for dep in deps:
@@ -34,5 +36,6 @@ def objc_importer(
         hdrs = hdrs,
         copts = copts,
         module_name = module_name,
+        visibility = visibility
         **kwargs
     )
