@@ -39,16 +39,15 @@ git_repository(
     tag = "1.0.3",
 )
 
-
 git_repository(
     name = "build_bazel_rules_ios",
-    remote = "https://github.com/bazel-ios/rules_ios.git",
     branch = "master",
+    remote = "https://github.com/bazel-ios/rules_ios.git",
 )
 
 load(
     "@build_bazel_rules_ios//rules:repositories.bzl",
-    "rules_ios_dependencies"
+    "rules_ios_dependencies",
 )
 
 rules_ios_dependencies()

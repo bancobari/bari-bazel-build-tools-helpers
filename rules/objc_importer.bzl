@@ -15,7 +15,7 @@ def objc_importer(
         namespace = hmap_custom_namespace or module_name or name,
         hdrs = hdrs,
         direct_hdr_providers = deps,
-        visibility = visibility
+        visibility = visibility,
     )
 
     for dep in deps:
