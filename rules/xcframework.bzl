@@ -27,7 +27,7 @@ def apple_dynamic_xcframework_import(
                  "{path}/{development_prefix}/**".format(path = path, development_prefix = development_prefix),
             ]),
             development_arm_selector: native.glob([
-                 "{path}/{development_arm_prefix}/**".format(path = path, development_prefix = development_arm_prefix),
+                 "{path}/{development_arm_prefix}/**".format(path = path, development_arm_prefix = development_arm_prefix),
             ]),
             release_selector: native.glob([
                  "{path}/{release_prefix}/**".format(path = path, release_prefix = release_prefix),
@@ -59,7 +59,7 @@ def apple_static_xcframework_import(
                  "{path}/{development_prefix}/**".format(path = path, development_prefix = development_prefix),
             ]),
             development_arm_selector: native.glob([
-                 "{path}/{development_arm_prefix}/**".format(path = path, development_prefix = development_arm_prefix),
+                 "{path}/{development_arm_prefix}/**".format(path = path, development_arm_prefix = development_arm_prefix),
             ]),
             release_selector: native.glob([
                  "{path}/{release_prefix}/**".format(path = path, release_prefix = release_prefix),
