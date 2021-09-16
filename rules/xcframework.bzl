@@ -16,7 +16,7 @@ def apple_dynamic_xcframework_import(
     development_selector, 
     release_selector, 
     development_arm_selector,
-    development_arm_prefix
+    development_arm_prefix,
     **kwargs
 ):
 
@@ -48,7 +48,7 @@ def apple_static_xcframework_import(
     development_selector,
     release_selector,
     development_arm_selector,
-    development_arm_prefix
+    development_arm_prefix,
     **kwargs
 ):
 
