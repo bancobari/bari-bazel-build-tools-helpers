@@ -11,29 +11,24 @@ load(
 def apple_dynamic_xcframework_import(
     name, 
     path, 
-    development_prefix, 
+    simulator_prefix, 
     release_prefix, 
-    development_selector, 
+    simulator_selector, 
     release_selector, 
-    development_arm_selector,
-    development_arm_prefix,
     **kwargs
 ):
 
     apple_dynamic_framework_import(
         name = name,
         framework_imports = select({
-            development_selector: native.glob([
-                 "{path}/{development_prefix}/**".format(path = path, development_prefix = development_prefix),
-            ]),
-            development_arm_selector: native.glob([
-                 "{path}/{development_arm_prefix}/**".format(path = path, development_arm_prefix = development_arm_prefix),
+            simulator_selector: native.glob([
+                 "{path}/{simulator_prefix}/**".format(path = path, simulator_prefix = simulator_prefix),
             ]),
             release_selector: native.glob([
                  "{path}/{release_prefix}/**".format(path = path, release_prefix = release_prefix),
             ]),
             "//conditions:default": native.glob([
-                 "{path}/{development_prefix}/**".format(path = path, development_prefix = development_prefix),
+                 "{path}/{simulator_prefix}/**".format(path = path, simulator_prefix = simulator_prefix),
             ])
         }),
         visibility = ["//visibility:public"],
@@ -43,23 +38,18 @@ def apple_dynamic_xcframework_import(
 def apple_static_xcframework_import(
     name,
     path,
-    development_prefix,
-    release_prefix,
-    development_selector,
-    release_selector,
-    development_arm_selector,
-    development_arm_prefix,
+    simulator_prefix, 
+    release_prefix, 
+    simulator_selector, 
+    release_selector, 
     **kwargs
 ):
 
     apple_static_framework_import(
         name = name,
         framework_imports = select({
-            development_selector: native.glob([
-                 "{path}/{development_prefix}/**".format(path = path, development_prefix = development_prefix),
-            ]),
-            development_arm_selector: native.glob([
-                 "{path}/{development_arm_prefix}/**".format(path = path, development_arm_prefix = development_arm_prefix),
+            simulator_selector: native.glob([
+                 "{path}/{simulator_prefix}/**".format(path = path, simulator_prefix = simulator_prefix),
             ]),
             release_selector: native.glob([
                  "{path}/{release_prefix}/**".format(path = path, release_prefix = release_prefix),
