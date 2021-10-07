@@ -55,7 +55,7 @@ def apple_static_xcframework_import(
                  "{path}/{release_prefix}/**".format(path = path, release_prefix = release_prefix),
             ]),
             "//conditions:default": native.glob([
-                 "{path}/{development_prefix}/**".format(path = path, development_prefix = development_prefix),
+                 "{path}/{simulator_prefix}/**".format(path = path, simulator_prefix = simulator_prefix),
             ])
         }),
         visibility = ["//visibility:public"],
